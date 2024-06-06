@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register | Pelican Panel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            width: 100%;
+            padding: 30px;
+            background-color: #343a40;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            background-color: #f8f9fa;
+        }
+
+        #registerBtn,
+        #loginBtn {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #registerBtn:hover,
+        #loginBtn:hover {
+            background-color: #218838;
+        }
+
+        #loginLink {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register / Login</h1>
+        <form id="registerForm">
+            <input type="text" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <button id="registerBtn" type="submit">Register</button>
+        </form>
+        <form id="loginForm" style="display: none;">
+            <input type="text" id="emailLogin" name="emailLogin" placeholder="Email" required>
+            <input type="password" id="passwordLogin" name="passwordLogin" placeholder="Password" required>
+            <button id="loginBtn" type="submit">Login</button>
+        </form>
+        <p>Already have an account? <a href="#" id="loginLink">Login</a></p>
+    </div>
+
+    <script>
+        document.getElementById("loginLink").addEventListener("click", function(event) {
+            event.preventDefault();
+            document.getElementById("registerForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+        });
+
+        document.getElementById("registerForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Simulate registration success
+            // Replace this with your actual registration logic
+            var registrationSuccess = true;
+
+            if (registrationSuccess) {
+                // Redirect to dashboard.html after successful registration
+            }
+        });
+
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var email = document.getElementById("emailLogin").value;
+            var password = document.getElementById("passwordLogin").value;
+
+            // Perform login logic here (e.g., send data to server)
+            // After successful login, you may redirect the user or perform other actions
+        });
+    </script>
+</body>
+</html>
